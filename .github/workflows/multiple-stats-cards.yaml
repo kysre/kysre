@@ -41,3 +41,21 @@ jobs:
         hide-keys: general, contributions, languages
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+    - name: Generate the general stats
+      uses: cicirello/user-statistician@v1
+      with:
+        image-file: images/general.svg
+        colors: dark
+        hide-keys: languages, repositories, contributions
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+    - name: Generate multiple stats
+      uses: cicirello/user-statistician@v1
+      with:
+        image-file: images/stats.svg
+        colors: dark
+        hide-keys: general, languages
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
